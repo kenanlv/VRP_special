@@ -1,11 +1,14 @@
-from src.solver_google import GoogleSolver
+from src.solver_google import GoogleLocalSearchSolver, GoogleFirstSolutionSolver
 import json
 import matplotlib.pyplot as plt
 import numpy as np
-problems = ['uniform_1_problem', 'easy_1_problem']
-Solvers = [GoogleSolver]
+from os import listdir
+
+problems = [file.replace(".json", "") for file in listdir('test') if 'json' in file]
+Solvers = [GoogleLocalSearchSolver, GoogleFirstSolutionSolver]
 for Solver in Solvers:
     for problem in problems:
+        print(f"======{problem}======")
         with open(f"test/{problem}.json") as file:
             data = json.loads(file.read())
         solver = Solver(data["locations"], data["capacities"], data["origins"])
