@@ -1,11 +1,12 @@
 from src.solver_google import GoogleLocalSearchSolver, GoogleFirstSolutionSolver
+from src.solver_notGoogle import SolverNotGoogle
 import json
 import matplotlib.pyplot as plt
 import numpy as np
 from os import listdir
 
 problems = [file.replace(".json", "") for file in listdir('test') if 'json' in file]
-Solvers = [GoogleLocalSearchSolver, GoogleFirstSolutionSolver]
+Solvers = [GoogleLocalSearchSolver, GoogleFirstSolutionSolver, SolverNotGoogle]
 for Solver in Solvers:
     for problem in problems:
         print(f"======{problem}======")
