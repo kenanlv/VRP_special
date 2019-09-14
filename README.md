@@ -1,4 +1,4 @@
-# CVRP
+# VRP_Special
 
 > Vehicle Routing Problem is essencially an optimization problem. Where we need to find the optimal sets of routes for drivers to tranverse inorder to deliver to sets of customers.
 
